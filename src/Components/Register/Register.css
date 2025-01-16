@@ -1,0 +1,75 @@
+#register {
+    @apply bg-[#4CAB72] flex justify-center items-center 
+}
+.register {
+    @apply flex justify-start
+}
+#register .cont {
+    background: url(images/regbg.png);
+    @apply bg-center bg-cover bg-no-repeat rounded-[71px] py-[66px] px-[62px]
+}
+/* ==== */
+
+.mainLogin  {
+    @apply pt-[54px] pb-[144px] flex flex-col gap-[74px] items-center
+    border-[2px] border-[#F4F4F4] rounded-[50px] backdrop-blur-[12px] relative;
+}
+
+.mainLogin .loginHead h2 {
+    @apply font-pop text-white text-[52px] font-bold
+}
+.mainLogin .loginHead p {
+    @apply text-white font-medium text-[16x] font-pop
+}
+.mainLogin .loginHead p a {
+    @apply text-[#62FFB4]
+}
+
+/* ===== */
+.mainLogin form {
+    @apply flex flex-col items-center gap-[46px]
+}
+.mainLogin form .user {
+    @apply flex flex-col gap-[30px]
+}
+.mainLogin form .user .userBox {
+    @apply flex flex-col
+}
+.mainLogin form .user .userBox label {
+    @apply text-white text-[18px] font-bold font-pop
+}
+.mainLogin form .user .userBox input{
+    @apply outline-none  bg-transparent w-full sm:w-[515px]
+    h-[34px] border-b-[2px] border-b-white
+    text-white font-pop text-[18px]
+}
+.mainLogin button {
+    @apply py-[12px] px-[114px] bg-[#62FFB4] rounded-[10px]
+    text-[#696969] text-[16px] font-pop font-bold
+    shadow-[0px_39px_33px_-26px_#62FFB4]
+}
+
+/* ======= */
+.mainLogin .or h2 {
+    @apply text-[16px] font-pop font-medium text-white my-[30px]
+    flex items-center gap-[13px] 
+}
+.mainLogin .or h2::after {
+    content: '';
+    @apply inline-block w-full h-[2px] bg-white;
+}
+.mainLogin .or h2::before {
+    content: '';
+    @apply inline-block w-full h-[2px] bg-white;
+}
+.mainLogin .or h2 span {
+    @apply w-full text-center
+}
+/* ===== */
+.mainLogin .otherMethod {
+    @apply flex justify-center gap-[30px]
+}
+/* ===== */
+.mainLogin .position {
+    @apply absolute w-[874px] bottom-[-57px] right-[-619px]
+}
