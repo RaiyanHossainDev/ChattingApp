@@ -1,0 +1,36 @@
+.holder {
+    @apply flex justify-center items-center h-screen
+}
+
+
+
+
+
+
+
+
+
+/*  */
+.menu_row {
+    @apply relative h-[50px] gap-[20px] bg-off flex items-center justify-center transition-all duration-[.5]
+    
+}
+.menu_row svg {
+    @apply text-[25px] cursor-pointer text-brand font-bold
+}
+.menu_row .icons {
+    @apply absolute transition-all duration-[.4s]
+}
+.menu_row ul {
+    @apply gap-[10px] 
+}
+.menu_row ul li {
+    @apply relative
+}
+.menu_row ul li:hover span {
+    @apply scale-[.9]
+}
+.menu_row ul li span{
+    @apply bg-brand text-off py-[2px] px-[4px] rounded-[4px] font-pop transition-all duration-[.3s]
+    absolute top-[-42px] left-[50%] translate-x-[-50%] scale-0
+}

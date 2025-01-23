@@ -1,75 +1,75 @@
-#register {
-    @apply bg-[#4CAB72] flex justify-center items-center 
+#login {
+    @apply bg-[#4CAB72] flex justify-center items-center h-screen
 }
-.register {
+.login {
     @apply flex justify-start
 }
-#register .cont {
-    background-image: url(/images/regbg.png);
+#login .cont {
+    background: url(/images/regbg.png);
     @apply bg-center bg-cover bg-no-repeat rounded-[71px] py-[66px] px-[62px]
 }
 /* ==== */
 
-.mainRegister  {
+.mainLogin  {
     @apply pt-[54px] pb-[144px] flex flex-col gap-[74px] items-center
     border-[2px] border-[#F4F4F4] rounded-[50px] backdrop-blur-[9px] relative;
 }
 
-.mainRegister .RegisterHead h2 {
+.mainLogin .loginHead h2 {
     @apply font-pop text-white text-[52px] font-bold
 }
-.mainRegister .RegisterHead p {
+.mainLogin .loginHead p {
     @apply text-white font-medium text-[16x] font-pop
 }
-.mainRegister .RegisterHead p a {
+.mainLogin .loginHead p a {
     @apply text-[#62FFB4]
 }
 
 /* ===== */
-.mainRegister form {
+.mainLogin form {
     @apply flex flex-col items-center gap-[46px]
 }
-.mainRegister form .user {
+.mainLogin form .user {
     @apply flex flex-col gap-[30px]
 }
-.mainRegister form .user .userBox {
+.mainLogin form .user .userBox {
     @apply flex flex-col
 }
-.mainRegister form .user .userBox label {
+.mainLogin form .user .userBox label {
     @apply text-white text-[18px] font-bold font-pop
 }
-.mainRegister form .user .userBox input{
+.mainLogin form .user .userBox input{
     @apply outline-none  bg-transparent w-full sm:w-[515px]
     h-[34px] border-b-[2px] 
     text-white font-pop text-[18px]
 }
-.mainRegister button {
+.mainLogin button {
     @apply py-[12px] px-[114px] bg-[#62FFB4] rounded-[10px]
     text-[#696969] text-[16px] font-pop font-bold
     shadow-[0px_39px_33px_-26px_#62FFB4]
 }
 
 /* ======= */
-.mainRegister .or h2 {
+.mainLogin .or h2 {
     @apply text-[16px] font-pop font-medium text-white my-[30px]
     flex items-center gap-[13px] 
 }
-.mainRegister .or h2::after {
+.mainLogin .or h2::after {
     content: '';
     @apply inline-block w-full h-[2px] bg-white;
 }
-.mainRegister .or h2::before {
+.mainLogin .or h2::before {
     content: '';
     @apply inline-block w-full h-[2px] bg-white;
 }
-.mainRegister .or h2 span {
+.mainLogin .or h2 span {
     @apply w-full text-center
 }
 /* ===== */
-.mainRegister .otherMethod {
+.mainLogin .otherMethod {
     @apply flex justify-center gap-[30px]
 }
 /* ===== */
-.mainRegister .position {
+.mainLogin .position {
     @apply absolute w-[874px] bottom-[-57px] right-[-619px]
 }

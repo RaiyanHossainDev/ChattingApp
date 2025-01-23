@@ -2,17 +2,28 @@ import { createBrowserRouter, createRoutesFromChildren, Route, RouterProvider } 
 import './App.css'
 import Register from './Components/Register/Register'
 import LayoutAuth from './Layout/LayoutAuth'
+import app from './firebase.config'
+import { ToastContainer } from 'react-toastify'
+import Login from './Components/Login/Login'
+import LayoutOne from './Layout/LayoutOne'
+import Home from './Pages/Home'
 
 function App() {
   const router = createBrowserRouter(createRoutesFromChildren(
-    <Route path='/' element={<LayoutAuth/>}>
-      <Route index element={<Register/>} />
+    <Route>
+      <Route path='/auth' element={<LayoutAuth/>}>
+        <Route index element={<Register/>} />
+        <Route path='/auth/login' element={<Login/>} />
+      </Route>
+      <Route path='/' element={<LayoutOne/>}>
+        <Route index element={<Home/>} />
+      </Route>
     </Route>
   ))
-
   return (
     <>
       <RouterProvider router={router} />
+      <ToastContainer />
     </>
   )
 }
