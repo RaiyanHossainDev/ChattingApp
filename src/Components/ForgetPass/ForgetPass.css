@@ -1,0 +1,22 @@
+#forget {
+    @apply h-screen flex justify-center items-center bg-off
+}
+
+.mainForget {
+    background: url(/images/regbg.png);
+    @apply bg-cover bg-center bg-no-repeat rounded-[64px] px-[104px] pt-[120px] pb-[70px]
+}
+.mainForget form {
+    @apply flex flex-col items-center gap-[29px]
+}
+.mainForget form input {
+    @apply bg-transparent outline-none font-pop text-[18px] text-white py-[11px] pl-[20px] rounded-[12px]
+    backdrop-blur-[6px] w-full sm:w-[433px] font-semibold
+}
+.mainForget form button {
+    @apply text-[18px] font-pop font-semibold text-off bg-[#94F871] rounded-[9px]
+    px-[24px] py-[8px]
+}
+.mainForget a {
+    @apply text-off text-[18px] font-semibold font-pop mt-[81px] inline-block
+}

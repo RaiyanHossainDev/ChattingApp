@@ -9,13 +9,10 @@ import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   const [nav,setNav] = useState(false)
-  console.log(nav);
 
   return (
-    <div className="holder">
       <nav id="nav">
-        <div className="container">
-          <div className={`menu_row ${nav?"w-[280px] rounded-[15px]"
+          <div className={`menu_row ${nav?"w-[260px] shadow-[0px_5px_1px_rgba(221,_221,_221,_1),_0_10px_20px_rgba(204,_204,_204,_1)] rounded-[15px]"
           :
             "rounded-[50%] w-[50px] hover:rounded-[15px] hover:w-[55px]"}`}>
             <div className={`icons icon1 ${nav?'top-[50%] opacity-[10] translate-y-[-50%] left-[10px]'
@@ -26,7 +23,7 @@ const Navbar = () => {
                   <span>Profile</span>
                 </li>
                 <li><Link><BsPeople /></Link>
-                  <span>Friends</span>
+                  <span>User</span>
                 </li>
                 <li><Link><TiMessages /></Link>
                   <span>Messages</span>
@@ -52,9 +49,7 @@ const Navbar = () => {
               </ul>
             </div>
           </div>
-        </div>
       </nav>
-    </div>
   )
 }
 

@@ -1,5 +1,5 @@
 #register {
-    @apply bg-[#4CAB72] flex justify-center items-center 
+    @apply bg-[#4CAB72] flex justify-center items-center h-screen
 }
 .register {
     @apply flex justify-start

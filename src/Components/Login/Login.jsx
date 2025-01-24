@@ -1,22 +1,28 @@
 import React, { useState } from 'react'
 import './Login.css'
 import { Link, useNavigate } from 'react-router-dom'
-import { getAuth, signInWithEmailAndPassword , } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword ,signInWithPopup,GoogleAuthProvider, getRedirectResult } from "firebase/auth";
 import { Bounce, toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
 import { userData } from '../../slice/userSlice';
+import { BeatLoader } from 'react-spinners';
+import { getDatabase, push, ref, set } from "firebase/database";
+
+
 
 const Login = () => {
     // =========================== custom useStates
     const [input,setInput] = useState({email:'',password:''})
     const [error,setError] = useState({emailError:false,passwordError:false})
+    const [loader,setLoader] = useState(false)
     const navigate   = useNavigate()
     const delivaryMan = useDispatch()
 
     // ============== Firebase variables
     const auth = getAuth();
+    const provider = new GoogleAuthProvider();
+    const db = getDatabase();
 
-    
 
     // =============================== All Functions
     let handleSubmit = (e)=>{
@@ -28,16 +34,37 @@ const Login = () => {
             }else if(input.password == ''){
                 setError((prev)=>({...prev,passwordError:true}))
             }else{
+                // ============================ setting loader
+                setLoader(true)
                 // ============================ signing in the user
                 signInWithEmailAndPassword(auth, input.email, input.password)
                 .then((userCredential) => {
                     // Signed in 
                     const user = userCredential.user;
                     if (user.emailVerified == true) {
+                        setLoader(false)
+                        toast.success('loged in!', {
+                            position: "top-right",
+                            autoClose: 5000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                            theme: "dark",
+                            transition: Bounce,
+                        });
                         localStorage.setItem('user',JSON.stringify(user))
                         delivaryMan(userData(user))
                         navigate('/')
+                        set(push(ref(db, 'AllUsers/'), {
+                            username: user.photoURL,
+                            email: user.email,
+                            profile_picture : user.photoURL,
+                            uid: user.uid,
+                        }));
                     }else{
+                        setLoader(false)
                         toast.info('Email is not varified!', {
                             position: "top-right",
                             autoClose: 5000,
@@ -54,6 +81,7 @@ const Login = () => {
                 .catch((error) => {
                     const errorCode = error.code
                     if (errorCode) {
+                        setLoader(false)
                         toast.error('Something went wrong', {
                             position: "top-right",
                             autoClose: 5000,
@@ -68,6 +96,39 @@ const Login = () => {
                     }
                 });
             }
+        }
+        let handleGoogleLogin = ()=>{
+            signInWithPopup(auth, provider)
+            .then((result) => {
+                // This gives you a Google Access Token. You can use it to access the Google API.
+                const credential = GoogleAuthProvider.credentialFromResult(result);
+                const token = credential.accessToken;
+                // The signed-in user info.
+                const user = result.user;
+                // IdP data available using getAdditionalUserInfo(result)
+                localStorage.setItem('user',JSON.stringify(user))
+                delivaryMan(userData(user))
+                navigate('/')
+                set(push(ref(db, 'AllUsers/'), {
+                    username: user.photoURL,
+                    email: user.email,
+                    profile_picture : user.photoURL,
+                    uid: user.uid,
+                }
+                ));
+                
+            }).catch((error) => {
+                // Handle Errors here.
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                // The email of the user's account used.
+                const email = error.customData.email;
+                // The AuthCredential type that was used.
+                const credential = GoogleAuthProvider.credentialFromError(error);
+                console.log(errorCode);
+                console.log(credential);
+                console.log(email);
+            });
         }
 
   return (
@@ -93,16 +154,24 @@ const Login = () => {
                                     <input className={`${error.passwordError?'border-b-red-600':'border-b-white'}`} onChange={(e)=>{setInput((prev)=>({...prev,password:e.target.value})),setError((prev)=>({...prev,passwordError:false}))}} type="password" />
                                 </div>
                             </div>
-                            <button onClick={(e)=>handleSubmit(e)}>Sign In</button>
+                            <button onClick={(e)=>handleSubmit(e)}>
+                                {
+                                    loader?
+                                        <BeatLoader color='#ededed' />
+                                    :
+                                        "Sign In"
+                                }   
+                            </button>
                         </form>
+                        <Link to={'/auth/forget'} className="forget inline-block mt-[15px] text-off">Forget Password ?</Link>
                         <div className="or"><h2><span>Or Sign In with </span></h2></div>
                         <div className="otherMethod">
-                            <a href="#">
+                            <button onClick={handleGoogleLogin} href="#">
                                 <img src="/images/google.png" alt="" />
-                            </a>
-                            <a href="#">
+                            </button>
+                            <button href="#">
                                 <img src="/images/apple.png" alt="" />
-                            </a>
+                            </button>
                         </div>
                     </div>
                     <img className='position' src="/images/regleaf.png" alt="" />

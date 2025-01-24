@@ -3,12 +3,14 @@ import './Register.css'
 import { Link, useNavigate } from 'react-router-dom'
 import { getAuth, createUserWithEmailAndPassword, updateProfile, sendEmailVerification } from "firebase/auth";
 import { Bounce, toast } from 'react-toastify';
+import { BeatLoader } from 'react-spinners';
 
 
 const Register = () => {
     // =========================== custom useStates
     const [input,setInput] = useState({email:'',password:'',username:''})
     const [error,setError] = useState({emailError:false,passwordError:false,usernameError:false})
+    const [loadder,setLoader] = useState(false)
     const navigate = useNavigate()
 
     // ============== Firebase variables
@@ -27,6 +29,8 @@ const Register = () => {
         }else if(input.password == ''){
             setError((prev)=>({...prev,passwordError:true}))
         }else{
+            // ======================== setting loader
+            setLoader(true)
             // ======================== creating a password base accout
             createUserWithEmailAndPassword(auth, input.email, input.password)
             .then((userCredential) => {
@@ -41,6 +45,7 @@ const Register = () => {
                     sendEmailVerification(auth.currentUser)
                     .then(() => {
                         // Email verification sent!
+                        setLoader(false)
                         toast.success('Email verification sent', {
                             position: "top-right",
                             autoClose: 5000,
@@ -133,17 +138,15 @@ const Register = () => {
                                     <input className={`${error.passwordError?'border-b-red-600':'border-b-white'}`} onChange={(e)=>{setInput((prev)=>({...prev,password:e.target.value})),setError((prev)=>({...prev,passwordError:false}))}} type="password" />
                                 </div>
                             </div>
-                            <button onClick={(e)=>handleSubmit(e)}>Sign Up</button>
+                            <button onClick={(e)=>handleSubmit(e)}>
+                                {
+                                    loadder?
+                                        <BeatLoader color='#ededed' />
+                                    :
+                                        "Sign Up"
+                                }
+                            </button>
                         </form>
-                        <div className="or"><h2><span>Or Sign Up with </span></h2></div>
-                        <div className="otherMethod">
-                            <a href='#'>
-                                <img src="/images/google.png" alt="" />
-                            </a>
-                            <a href='#'>
-                                <img src="/images/apple.png" alt="" />
-                            </a>
-                        </div>
                     </div>
                     <img className='position' src="/images/regleaf.png" alt="" />
                 </div>

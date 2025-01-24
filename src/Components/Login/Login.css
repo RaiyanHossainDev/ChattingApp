@@ -43,7 +43,7 @@
     h-[34px] border-b-[2px] 
     text-white font-pop text-[18px]
 }
-.mainLogin button {
+.mainLogin form button {
     @apply py-[12px] px-[114px] bg-[#62FFB4] rounded-[10px]
     text-[#696969] text-[16px] font-pop font-bold
     shadow-[0px_39px_33px_-26px_#62FFB4]

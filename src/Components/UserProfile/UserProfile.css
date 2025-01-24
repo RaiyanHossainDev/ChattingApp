@@ -1,0 +1,31 @@
+#profile {
+    @apply w-[300px] h-screen flex flex-col justify-between border-r-[4px] border-r-brand;
+    background: url(/images/sideMenuBG.jpg);
+    background-position: center;
+    background-size: cover;
+}
+#profile .holder {
+    @apply p-[10px] 
+}
+#profile .holder .searchBar input {
+    @apply w-full border-none outline-none bg-brand rounded-[10px] h-[40px]
+    pl-[16px] text-white font-pop text-[18px]
+}
+.mainProfile {
+    @apply bg-brand p-[15px] flex items-center justify-center gap-[20px] w-full
+}
+.mainProfile img {
+    @apply w-[60px] rounded-full overflow-hidden
+}
+.mainProfile .logOut svg {
+    @apply text-[27px] cursor-pointer text-gray-600
+}
+.mainProfile h2 {
+    @apply font-semibold font-pop text-gray-600
+}
+#profile .holder2 {
+    @apply flex flex-col items-center gap-[10px]
+}
+#profile .holder2 .line {
+    @apply w-[260px] h-[4px] bg-gray-300 rounded-sm
+}

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { Outlet, useNavigate } from 'react-router-dom'
-import Navbar from '../Components/Navbar/Navbar'
+import UserProfile from '../Components/UserProfile/UserProfile'
 
 const LayoutOne = () => {
   const currentUser = useSelector(sate => sate.currentUser.value)
@@ -14,9 +14,11 @@ const LayoutOne = () => {
   },[])
 
   return (
-    <div>
-        <Navbar/>
-        <Outlet/>
+    <div className='flex'>
+        <UserProfile/>
+        <div className=''>
+          <Outlet/>
+        </div>
     </div>
   )
 }

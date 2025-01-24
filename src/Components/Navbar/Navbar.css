@@ -1,22 +1,13 @@
-.holder {
-    @apply flex justify-center items-center h-screen
+#nav {
+    @apply mt-[30px]
 }
-
-
-
-
-
-
-
-
-
 /*  */
 .menu_row {
-    @apply relative h-[50px] gap-[20px] bg-off flex items-center justify-center transition-all duration-[.5]
-    
+    @apply relative h-[50px] gap-[20px] bg-brand flex items-center justify-center transition-all duration-[.5]
+    hover:shadow-[0px_5px_1px_rgba(221,_221,_221,_1),_0_10px_20px_rgba(204,_204,_204,_1)]
 }
 .menu_row svg {
-    @apply text-[25px] cursor-pointer text-brand font-bold
+    @apply text-[25px] cursor-pointer text-off font-bold
 }
 .menu_row .icons {
     @apply absolute transition-all duration-[.4s]
@@ -31,6 +22,6 @@
     @apply scale-[.9]
 }
 .menu_row ul li span{
-    @apply bg-brand text-off py-[2px] px-[4px] rounded-[4px] font-pop transition-all duration-[.3s]
-    absolute top-[-42px] left-[50%] translate-x-[-50%] scale-0
+    @apply bg-off text-[#76ff44] py-[2px] px-[4px] rounded-[4px] font-pop transition-all duration-[.3s]
+    absolute top-[-42px] left-[50%] translate-x-[-50%] scale-0 font-semibold
 }
