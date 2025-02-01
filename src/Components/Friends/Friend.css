@@ -1,0 +1,7 @@
+#friend {
+    @apply p-[20px]
+}
+
+.friend_head h1 {
+    @apply font-pop font-bold text-[29px] text-brand text-center
+}

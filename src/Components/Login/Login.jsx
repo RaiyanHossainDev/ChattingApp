@@ -41,7 +41,7 @@ const Login = () => {
                 .then((userCredential) => {
                     // Signed in 
                     const user = userCredential.user;
-                    if (user.emailVerified == true) {
+                    // if (user.emailVerified == true) {
                         setLoader(false)
                         toast.success('loged in!', {
                             position: "top-right",
@@ -57,26 +57,25 @@ const Login = () => {
                         localStorage.setItem('user',JSON.stringify(user))
                         delivaryMan(userData(user))
                         navigate('/')
-                        set(push(ref(db, 'AllUsers/'), {
-                            username: user.photoURL,
-                            email: user.email,
+                        set(ref(db, 'AllUsers/' + user.uid), {
+                            username: user.displayName,
                             profile_picture : user.photoURL,
                             uid: user.uid,
-                        }));
-                    }else{
-                        setLoader(false)
-                        toast.info('Email is not varified!', {
-                            position: "top-right",
-                            autoClose: 5000,
-                            hideProgressBar: false,
-                            closeOnClick: true,
-                            pauseOnHover: true,
-                            draggable: true,
-                            progress: undefined,
-                            theme: "dark",
-                            transition: Bounce,
                         });
-                    }
+                    // }else{
+                    //     setLoader(false)
+                    //     toast.info('Email is not varified!', {
+                    //         position: "top-right",
+                    //         autoClose: 5000,
+                    //         hideProgressBar: false,
+                    //         closeOnClick: true,
+                    //         pauseOnHover: true,
+                    //         draggable: true,
+                    //         progress: undefined,
+                    //         theme: "dark",
+                    //         transition: Bounce,
+                    //     });
+                    // }
                 })
                 .catch((error) => {
                     const errorCode = error.code
@@ -109,13 +108,13 @@ const Login = () => {
                 localStorage.setItem('user',JSON.stringify(user))
                 delivaryMan(userData(user))
                 navigate('/')
-                set(push(ref(db, 'AllUsers/'), {
-                    username: user.photoURL,
+                set(ref(db, 'AllUsers/' + user.uid), {
+                    username: user.displayName,
                     email: user.email,
                     profile_picture : user.photoURL,
                     uid: user.uid,
                 }
-                ));
+                );
                 
             }).catch((error) => {
                 // Handle Errors here.

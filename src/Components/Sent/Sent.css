@@ -1,0 +1,20 @@
+#sent {
+    @apply p-[10px]
+}
+
+.sent_head h1 {
+    @apply text-[27px] font-pop font-bold text-brand text-center
+}
+
+.SentUsers {
+    @apply flex flex-col gap-[20px] mt-[60px]
+}
+.singleSentUsers img{
+    @apply w-[90px] rounded-full
+}
+.singleSentUsers h1 {
+    @apply text-brand font-semibold text-[23px]
+}
+.singleSentUsers {
+    @apply flex items-center gap-[18px]
+}

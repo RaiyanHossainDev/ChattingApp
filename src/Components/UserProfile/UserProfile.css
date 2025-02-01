@@ -1,5 +1,5 @@
 #profile {
-    @apply w-[300px] h-screen flex flex-col justify-between border-r-[4px] border-r-brand;
+    @apply w-[320px] h-screen flex flex-col justify-between border-r-[4px] border-r-brand;
     background: url(/images/sideMenuBG.jpg);
     background-position: center;
     background-size: cover;

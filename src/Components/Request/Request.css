@@ -1,0 +1,29 @@
+#request {
+    @apply p-[13px]
+}
+.req_head h1 {
+    @apply text-[24px] font-pop font-bold text-brand text-center
+}
+.requests {
+    @apply flex mt-[50px] flex-col
+}
+.singleReqCard{
+    @apply flex justify-between items-center border-brand
+    border-[2px] rounded-xl w-[700px] px-[20px]
+}
+.singleReqCard .cardText {
+    @apply flex items-center gap-[20px]
+}
+.singleReqCard .cardText img {
+    @apply w-[100px] rounded-full 
+}
+.singleReqCard .cardText h2 {
+    @apply text-brand font-bold text-[20px] font-pop
+}
+.singleReqCard .cardButton {
+    @apply flex gap-[10px]
+}
+.singleReqCard .cardButton button {
+    @apply px-[18px] py-[8px] rounded-md text-brand bg-primary
+    font-semibold font-pop text-[18px]
+}

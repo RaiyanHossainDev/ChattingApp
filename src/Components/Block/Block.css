@@ -1,0 +1,6 @@
+#blockList {
+    @apply p-[10px]
+}
+.BlockHead h1 {
+    @apply text-brand font-bold font-pop text-[24px] text-center mb-[50px]
+}

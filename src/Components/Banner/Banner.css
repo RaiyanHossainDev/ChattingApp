@@ -1,0 +1,32 @@
+#banner {
+    background: url(/images/bannerBG.jpg);
+    @apply bg-cover bg-center bg-no-repeat w-full pt-[161px] pb-[128px]
+}
+.banner_head {
+    @apply flex justify-center flex-col items-center gap-[64px]
+}
+.banner_head h1 {
+    @apply text-[65px] font-pop font-medium w-full lg:w-[1078px] text-center
+    text-brand
+}
+.banner_head h1 span {
+    @apply text-primary
+}
+.banner_head p {
+    @apply text-[32px] font-pop font-medium text-[#CDCDCD] px-[34px] border-b-[2px]
+    border-b-white rounded-sm
+}
+/*  */
+.banner_row {
+    @apply mt-[226px]
+}
+.banner_row button{
+    @apply relative text-[19px] font-bold font-pop text-[#2E2E2E]
+    bg-brand rounded-xl px-[84px] py-[8px]
+}
+.banner_row button img {
+    @apply absolute top-[-266px] right-[-130px] rotate-[25deg] transition-all
+}
+.banner_row button:hover img {
+    @apply rotate-[30deg]
+}

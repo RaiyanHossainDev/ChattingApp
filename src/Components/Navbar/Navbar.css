@@ -7,13 +7,10 @@
     hover:shadow-[0px_5px_1px_rgba(221,_221,_221,_1),_0_10px_20px_rgba(204,_204,_204,_1)]
 }
 .menu_row svg {
-    @apply text-[25px] cursor-pointer text-off font-bold
+    @apply text-[23px] cursor-pointer text-off font-bold
 }
 .menu_row .icons {
     @apply absolute transition-all duration-[.4s]
-}
-.menu_row ul {
-    @apply gap-[10px] 
 }
 .menu_row ul li {
     @apply relative

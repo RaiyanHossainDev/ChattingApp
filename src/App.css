@@ -1,0 +1,32 @@
+*::selection{
+    @apply bg-[#ffd900a2] text-brand [text-shadow:_-1px_3px_3px_#838383]
+}
+
+#begun {
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: 2px solid rgb(47, 200, 0);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none; /* So the element doesn't block clicks */
+    transform: translate(0, 0);
+    transition: transform 0.1s ease; 
+    /* Smooth animation effect */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#dot {
+    /* @apply w-[7px] h-[7px] rounded-full bg-brand ; */
+    width: 9px;
+    height: 9px;
+    background-color: rgb(200, 0, 0);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none; /* So the element doesn't block clicks */
+    /* transform: translate(0, 0); */
+    transition: transform 0.001s ease; 
+    /* Smooth animation effect */
+
+}

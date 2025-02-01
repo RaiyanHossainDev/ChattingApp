@@ -1,0 +1,12 @@
+header {
+    @apply p-[17px] shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_8px_8px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)]
+}
+
+
+.head_row .items {
+    @apply flex items-center gap-[10px]  font-semibold text-brand font-pop
+    text-[19px]
+}
+.head_row .items svg {
+    @apply text-[25px]
+}
