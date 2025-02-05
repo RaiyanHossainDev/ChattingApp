@@ -1,8 +1,8 @@
 #users {
-    @apply p-[10px] w-full flex flex-col items-start
+    @apply p-[10px] w-full flex flex-col items-start justify-center
 }
 #users .searchBar {
-    @apply rounded-[20px] overflow-hidden flex bg-primary 
+    @apply rounded-[20px] overflow-hidden flex bg-primary  
 }
 #users .searchBar input{
     @apply border-none outline-none bg-brand pl-[20px] h-[48px] text-off
@@ -12,5 +12,5 @@
 }
 
 #users .Users {
-    @apply mt-[50px] flex flex-wrap gap-[20px] justify-center items-center
+    @apply mt-[50px] flex flex-wrap gap-[20px] justify-center items-center w-full
 }

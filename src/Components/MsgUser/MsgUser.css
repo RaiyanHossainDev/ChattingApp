@@ -1,0 +1,19 @@
+#sideUsers {
+    @apply w-[403px] bg-gray-50  rounded-xl
+    shadow-[0_3px_10px_rgb(0,0,0,0.2)]  m-[10px] p-[10px] 
+    overflow-auto
+
+}
+#sideUsers ul {
+    @apply flex flex-col justify-center gap-[15px]
+}
+#sideUsers ul li {
+    @apply w-full rounded-2xl bg-gray-100 flex items-center gap-[20px]
+    p-[10px] cursor-pointer transition-all duration-[.2s] hover:bg-gray-200
+}
+#sideUsers ul li img {
+    @apply rounded-full w-[60px]
+}
+#sideUsers ul li h2 {
+    @apply font-semibold text-[17px]
+}

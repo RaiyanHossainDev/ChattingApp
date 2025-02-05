@@ -13,6 +13,7 @@ import UserPage from './Pages/UserPage'
 import RequestPage from './Pages/RequestPage'
 import SentPage from './Pages/SentPage'
 import BlockPage from './Pages/blockPage'
+import Msg from './Components/Msg/Msg'
 
 function App() {
   const router = createBrowserRouter(createRoutesFromChildren(
@@ -29,6 +30,7 @@ function App() {
         <Route path='/request' element={<RequestPage/>} />
         <Route path='/sent' element={<SentPage/>} />
         <Route path='/BlockList' element={<BlockPage/>} />
+        <Route path='/Messege' element={<Msg/>} />
       </Route>
     </Route>
   ))

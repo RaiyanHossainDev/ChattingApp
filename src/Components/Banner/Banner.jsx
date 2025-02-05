@@ -1,7 +1,9 @@
 import React from 'react'
 import './Banner.css'
+import { useNavigate } from 'react-router-dom'
 
 const Banner = () => {
+  const nami = useNavigate()
   return (
     <section id='banner'>
         <div className="container">
@@ -10,7 +12,7 @@ const Banner = () => {
                 <p>made by Raiyan Hossain</p>
             </div>
             <div className="banner_row">
-                <button>FIND <img src="/images/arrow.jpg" alt="" /></button>
+                <button onClick={()=>nami('/user')}>FIND <img src="/images/arrow.jpg" alt="" /></button>
             </div>
         </div>    
     </section>

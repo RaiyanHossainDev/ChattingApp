@@ -18,6 +18,8 @@ const Users = () => {
 
     // =-=-=-=-=-==-=-=-=-=-=-=- Redux variables
     const currentUser = useSelector(a => a.currentUser.value)
+    const currentSearchKey = useSelector(a => a.currentSearchKey.value)
+    
 
     // ================== reading data
     const db = getDatabase()
@@ -65,10 +67,11 @@ const Users = () => {
             setAllFriends(arr)
         });
       },[])
-
+    
     // =================================== All Functions
     // =--=-=-=-=-==-=--=-=- search function
-    let handleSearch = ()=>{
+    let handleSearch = (data)=>{
+        console.log(data)
         const filterdUser = mainUsers.filter((item)=>{
             if (searchTerm == '') {
                 return mainUsers
@@ -78,6 +81,14 @@ const Users = () => {
         })
         setAllUsers(filterdUser)
     }
+    //   ==-=-=-=-=-=-=-=-=
+    useEffect(()=>{
+        if (currentSearchKey != '') {
+            setSearchTerm(currentSearchKey)
+            handleSearch('aita to kaj kore')
+        }
+    },[currentSearchKey])
+
 
     // =-=-=-=-=-=-=-=-=-=-= addFriend Function
     let handleAddFriend = (data)=>{
@@ -95,8 +106,6 @@ const Users = () => {
         remove(ref(db, "/Requests/" + key))
         
     }
-
-    console.log(AllFriends);
     
   return (
     <section id='users'>

@@ -47,7 +47,7 @@ const Navbar = () => {
                 <li><Link to={'/user'}><BsPeople /></Link>
                   <span>User</span>
                 </li>
-                <li><Link><TiMessages /></Link>
+                <li><Link to={'/messege'}><TiMessages /></Link>
                   <span>Messages</span>
                 </li>
               </ul>

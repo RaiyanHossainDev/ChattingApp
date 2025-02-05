@@ -4,7 +4,7 @@ header {
 
 
 .head_row .items {
-    @apply flex items-center gap-[10px]  font-semibold text-brand font-pop
+    @apply flex items-center gap-[10px]  font-semibold text-brand font-pop px-[10px]
     text-[19px]
 }
 .head_row .items svg {
